@@ -1,0 +1,35 @@
+@startuml Business Logic 
+title Class Diagram - Patience 
+
+enum Suit
+enum Rank
+
+class Idioten
+{
+  +Play()
+  +Print()
+}
+class Deck 
+{
+  +AceHigh: bool
+  +Scramble()
+  +Print()
+}
+
+class PlayingCards
+{
+  +ToString()
+}
+
+class Program 
+{
+  +PlayIdioten(numberofgames: int) 
+}
+
+Idioten -*  Deck
+Deck -* PlayingCards
+PlayingCards -down-* Suit
+PlayingCards -down-* Rank
+Program -down-> Idioten
+
+@enduml
